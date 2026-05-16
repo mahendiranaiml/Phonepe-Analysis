@@ -1,0 +1,17 @@
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data folders and files
+csv_data/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Specific files user wants ignored
+column_mapping.md
