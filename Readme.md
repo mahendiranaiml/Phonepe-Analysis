@@ -1,106 +1,153 @@
-Customer Segmentation using PhonePe Transaction Data 📊
-📌 Problem Statement
+# Customer Segmentation using PhonePe Transaction Data 📊
 
-Customer Segmentation:
-Identify distinct user groups based on spending habits to tailor marketing strategies.
+## 📌 Problem Statement
 
-📖 Project Overview
+The objective of this project is to identify distinct customer groups based on transaction behavior using PhonePe transaction data.
 
-This project focuses on analyzing PhonePe insurance transaction data to identify different customer spending behaviors using Exploratory Data Analysis (EDA) and Machine Learning clustering techniques.
+Customer segmentation helps businesses:
 
-The goal is to segment users into meaningful groups based on:
+* Personalize marketing campaigns
+* Improve customer retention
+* Identify premium customers
+* Optimize engagement strategies
 
-transaction amount
-transaction frequency
-average transaction value
+---
 
-These insights can help businesses:
+## 📖 Project Overview
 
-personalize marketing campaigns,
-improve customer retention,
-identify premium users,
-and optimize customer engagement strategies.
-🛠️ Technologies Used
-Python 🐍
-Pandas
-NumPy
-Matplotlib
-Scikit-learn
-Jupyter Notebook
-📂 Dataset Used
+This project analyzes PhonePe insurance transaction data using:
 
-Datasets:
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Machine Learning Clustering Techniques
 
-aggregated_user_devices.csv
-aggregated_insurance.csv
+The segmentation is based on:
 
-Selected Features:
+* Transaction Amount
+* Transaction Frequency
+* Average Transaction Value
 
-transaction_amount
-transaction_count
-brand
-user_count
-percentage
-🔍 Exploratory Data Analysis (EDA)
+---
 
-Performed:
+## 🛠️ Technologies Used
 
-Missing value analysis
-Duplicate checking
-Statistical summary
-Distribution analysis
-Brand analysis
-Correlation analysis
-Feature engineering
+* Python 🐍
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-learn
+* Jupyter Notebook
 
-Key visualizations:
+---
 
-Transaction amount distribution
-Transaction count distribution
-Top mobile brands
-Cluster visualization
-Elbow Method
-Silhouette Score analysis
-⚙️ Feature Engineering
+## 📂 Dataset Used
 
-Created:
+### Datasets
 
-avg_transaction_value
-log_amount
-log_count
-log_avg_value
+* `aggregated_user_devices.csv`
+* `aggregated_insurance.csv`
+
+### Selected Features
+
+* `transaction_amount`
+* `transaction_count`
+* `brand`
+* `user_count`
+* `percentage`
+
+---
+
+## 🔍 Exploratory Data Analysis (EDA)
+
+### Analysis Performed
+
+* Missing value analysis
+* Duplicate checking
+* Statistical summary
+* Distribution analysis
+* Brand analysis
+* Correlation analysis
+* Feature engineering
+
+### Key Visualizations
+
+* Transaction amount distribution
+* Transaction count distribution
+* Top mobile brands
+* Cluster visualization
+* Elbow Method
+* Silhouette Score analysis
+
+---
+
+## ⚙️ Feature Engineering
+
+### Features Created
+
+* `avg_transaction_value`
+* `log_amount`
+* `log_count`
+* `log_avg_value`
+
+### Why Log Transformation?
 
 Log transformation was applied to handle:
 
-skewed distributions
-large outliers
-scale imbalance
-🤖 Machine Learning Approach
+* Skewed distributions
+* Large outliers
+* Scale imbalance
 
-Algorithm Used:
+---
 
-KMeans Clustering
+## 🤖 Machine Learning Approach
 
-Preprocessing:
+### Algorithm Used
 
-Feature scaling using StandardScaler
+* KMeans Clustering
 
-Validation Techniques:
+### Preprocessing
 
-Elbow Method
-Silhouette Score
-📊 Customer Segments Identified
+* Feature scaling using `StandardScaler`
 
-The clustering model identified 4 major customer groups:
+### Validation Techniques
 
-Cluster	Customer Type	Characteristics
-0	Regular Users	Moderate spending and activity
-1	Frequent Small Spenders	High frequency but low transaction value
-2	Premium Power Users	Highest spending and transaction activity
-3	Low Activity Users	Low engagement and spending
-💡 Key Insights
-Transaction amount and transaction count showed extremely high correlation (0.989).
-Highly engaged users contribute significantly more revenue.
-Average transaction value behaves independently from transaction frequency.
-Premium users represent the highest-value customer cohort.
-Low-activity users may require retention-focused strategies.
+* Elbow Method
+* Silhouette Score
+
+---
+
+## 📊 Customer Segments Identified
+
+| Cluster | Customer Type           | Characteristics                           |
+| ------- | ----------------------- | ----------------------------------------- |
+| 0       | Regular Users           | Moderate spending and activity            |
+| 1       | Frequent Small Spenders | High frequency but low transaction value  |
+| 2       | Premium Power Users     | Highest spending and transaction activity |
+| 3       | Low Activity Users      | Low engagement and spending               |
+
+---
+
+## 💡 Key Insights
+
+* Transaction amount and transaction count showed extremely high correlation (`0.989`)
+* Highly engaged users contribute significantly more revenue
+* Average transaction value behaves independently from transaction frequency
+* Premium users represent the highest-value customer cohort
+* Low-activity users may require retention-focused strategies
+
+---
+
+## 🚀 Future Improvements
+
+* Apply advanced clustering algorithms like DBSCAN and Hierarchical Clustering
+* Build an interactive dashboard
+* Perform real-time customer segmentation
+* Integrate geographic-level analysis
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates how machine learning can be used to identify meaningful customer groups from transaction data. These insights can support better business decisions, customer targeting, and revenue optimization strategies.
+
+---
