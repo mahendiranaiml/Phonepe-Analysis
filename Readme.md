@@ -6,148 +6,252 @@ The objective of this project is to identify distinct customer groups based on t
 
 Customer segmentation helps businesses:
 
-* Personalize marketing campaigns
-* Improve customer retention
-* Identify premium customers
-* Optimize engagement strategies
+- Personalize marketing campaigns
+- Improve customer retention
+- Identify premium customers
+- Optimize engagement strategies
 
 ---
 
-## 📖 Project Overview
+# 📖 Project Overview
 
 This project analyzes PhonePe insurance transaction data using:
 
-* Exploratory Data Analysis (EDA)
-* Feature Engineering
-* Machine Learning Clustering Techniques
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning Clustering Techniques
 
 The segmentation is based on:
 
-* Transaction Amount
-* Transaction Frequency
-* Average Transaction Value
+- Transaction Amount
+- Transaction Frequency
+- Average Transaction Value
+
+The project successfully identified distinct behavioral customer groups that support data-driven marketing and business decision-making.
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-* Python 🐍
-* Pandas
-* NumPy
-* Matplotlib
-* Scikit-learn
-* Jupyter Notebook
-
----
-
-## 📂 Dataset Used
-
-### Datasets
-
-* `aggregated_user_devices.csv`
-* `aggregated_insurance.csv`
-
-### Selected Features
-
-* `transaction_amount`
-* `transaction_count`
-* `brand`
-* `user_count`
-* `percentage`
+- Python 🐍
+- Pandas
+- NumPy
+- Matplotlib
+- Scikit-learn
+- Jupyter Notebook
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+# 📂 Dataset Used
 
-### Analysis Performed
+## Datasets
 
-* Missing value analysis
-* Duplicate checking
-* Statistical summary
-* Distribution analysis
-* Brand analysis
-* Correlation analysis
-* Feature engineering
+- `aggregated_user_devices.csv`
+- `aggregated_insurance.csv`
 
-### Key Visualizations
+## Selected Features
 
-* Transaction amount distribution
-* Transaction count distribution
-* Top mobile brands
-* Cluster visualization
-* Elbow Method
-* Silhouette Score analysis
+- `transaction_amount`
+- `transaction_count`
+- `brand`
+- `user_count`
+- `percentage`
 
 ---
 
-## ⚙️ Feature Engineering
+# 📊 Dataset Statistics
 
-### Features Created
+| Metric | Value |
+|---|---|
+| Total Records | 701 |
+| Minimum Transaction Amount | 1,199 |
+| Maximum Transaction Amount | 2.29 Billion |
+| Average Transaction Amount | 57.1 Million |
+| Minimum Transaction Count | 4 |
+| Maximum Transaction Count | 1.47 Million |
 
-* `avg_transaction_value`
-* `log_amount`
-* `log_count`
-* `log_avg_value`
+## 🔍 Key Observation
 
-### Why Log Transformation?
+The dataset showed highly skewed financial distributions with extremely large transaction ranges, making log transformation essential for clustering and analysis.
+
+---
+
+# 🔍 Exploratory Data Analysis (EDA)
+
+## Analysis Performed
+
+- Missing value analysis
+- Duplicate checking
+- Statistical summary
+- Distribution analysis
+- Brand analysis
+- Correlation analysis
+- Feature engineering
+
+## Key Visualizations
+
+- Transaction amount distribution
+- Transaction count distribution
+- Top mobile brands
+- Cluster visualization
+- Elbow Method
+- Silhouette Score analysis
+
+---
+
+# ⚙️ Feature Engineering
+
+## Features Created
+
+- `avg_transaction_value`
+- `log_amount`
+- `log_count`
+- `log_avg_value`
+
+## Why Log Transformation?
 
 Log transformation was applied to handle:
 
-* Skewed distributions
-* Large outliers
-* Scale imbalance
+- Highly skewed distributions
+- Large financial outliers
+- Scale imbalance
+- Better cluster separation
+
+This improved clustering quality by reducing the dominance of extreme transaction values.
 
 ---
 
-## 🤖 Machine Learning Approach
+# 🤖 Machine Learning Approach
 
-### Algorithm Used
+## Algorithm Used
 
-* KMeans Clustering
+- KMeans Clustering
 
-### Preprocessing
+## Preprocessing
 
-* Feature scaling using `StandardScaler`
+- Feature scaling using `StandardScaler`
 
-### Validation Techniques
+## Validation Techniques
 
-* Elbow Method
-* Silhouette Score
+- Elbow Method
+- Silhouette Score
 
----
+## Clustering Features
 
-## 📊 Customer Segments Identified
+The clustering model was trained using:
 
-| Cluster | Customer Type           | Characteristics                           |
-| ------- | ----------------------- | ----------------------------------------- |
-| 0       | Regular Users           | Moderate spending and activity            |
-| 1       | Frequent Small Spenders | High frequency but low transaction value  |
-| 2       | Premium Power Users     | Highest spending and transaction activity |
-| 3       | Low Activity Users      | Low engagement and spending               |
+- Log Transaction Amount
+- Log Transaction Count
+- Log Average Transaction Value
 
 ---
 
-## 💡 Key Insights
+# 📈 Correlation Analysis
 
-* Transaction amount and transaction count showed extremely high correlation (`0.989`)
-* Highly engaged users contribute significantly more revenue
-* Average transaction value behaves independently from transaction frequency
-* Premium users represent the highest-value customer cohort
-* Low-activity users may require retention-focused strategies
+| Variables | Correlation |
+|---|---|
+| Transaction Amount vs Transaction Count | **0.989** |
+| Transaction Amount vs Avg Transaction Value | **0.055** |
+| Transaction Count vs Avg Transaction Value | **0.018** |
+
+## 💡 Insight
+
+The analysis revealed an extremely strong positive correlation between transaction amount and transaction frequency.
+
+This indicates:
+
+> Highly engaged users contribute significantly more revenue.
+
+Meanwhile, average transaction value showed very weak correlation with transaction frequency, suggesting that repeated engagement matters more than individual high-value transactions.
 
 ---
 
-## 🚀 Future Improvements
+# 📊 Customer Segments Identified
 
-* Apply advanced clustering algorithms like DBSCAN and Hierarchical Clustering
-* Build an interactive dashboard
-* Perform real-time customer segmentation
-* Integrate geographic-level analysis
+| Cluster | Customer Type | Avg Transaction Amount | Avg Transaction Count | Avg Transaction Value |
+|---|---|---|---|---|
+| 0 | Regular Users | ~8.0 Million | ~6.9K | ~1314 |
+| 1 | Frequent Small Spenders | ~2.0 Million | ~9.3K | ~266 |
+| 2 | Premium Power Users | ~149 Million | ~105K | ~1428 |
+| 3 | Low Activity Users | ~662K | ~374 | Low |
 
 ---
 
-## 📌 Conclusion
+# 💡 Business Insights
 
-This project demonstrates how machine learning can be used to identify meaningful customer groups from transaction data. These insights can support better business decisions, customer targeting, and revenue optimization strategies.
+## 🔥 Premium Power Users
+
+- Highest revenue-generating customer segment
+- Extremely high transaction activity
+- Ideal targets for premium insurance plans and loyalty programs
+
+---
+
+## 📈 Frequent Small Spenders
+
+- Highly active but low-value transactions
+- Price-sensitive customer group
+- Suitable for cashback offers and budget-friendly plans
+
+---
+
+## 🎯 Regular Users
+
+- Stable and consistent transaction behavior
+- Strong long-term retention potential
+- Good targets for subscription-based offers
+
+---
+
+## ⚠️ Low Activity Users
+
+- Low engagement and low spending
+- Potential churn-risk users
+- Require re-engagement campaigns and onboarding support
+
+---
+
+# 🚀 Business Impact
+
+The segmentation model can help businesses:
+
+- Personalize marketing campaigns
+- Improve customer retention
+- Identify high-value customers
+- Optimize promotional targeting
+- Increase customer engagement
+- Design better insurance offerings
+
+---
+
+# ⚠️ Project Limitations
+
+The dataset does not contain:
+
+- Customer IDs
+- Individual user history
+- Time-based transaction tracking
+
+Therefore, this project performs:
+
+- Behavioral segmentation
+
+instead of:
+
+- Individual customer-level profiling
+
+---
+
+# 📌 Conclusion
+
+This project successfully identified distinct behavioral customer segments using transaction-based features and KMeans clustering.
+
+The analysis demonstrated that:
+
+- Transaction frequency is the strongest driver of revenue generation
+- Premium users contribute disproportionately high value
+- Customer engagement is more important than individual transaction size
+
+These insights can help businesses make data-driven decisions related to marketing, retention, customer targeting, and revenue optimization.
 
 ---
